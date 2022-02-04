@@ -1,0 +1,37 @@
+
+<div class="body-todolist">
+
+  <form [formGroup]="form_add_list" (ngSubmit)="onSubmit()" >
+    <input type="text" required name="name" formControlName="name" placeholder="Add List">
+    <button class="button" type="submit">Submit</button>
+    <button class="button" type="button" (click)="clear()">Clear</button>
+  </form>
+
+  <div class="container">
+    <div class="example-container">
+      <h2>To do</h2>
+      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList, doinglist, todoList]"
+        class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box todo" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>Doing</h2>
+      <div cdkDropList #doinglist="cdkDropList" [cdkDropListData]="doing" [cdkDropListConnectedTo]="[doneList, doinglist, todoList]"
+        class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box doing" *ngFor="let item of doing" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>Done</h2>
+      <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[doneList, doinglist, todoList]"
+        class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box done" *ngFor="let item of done" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
