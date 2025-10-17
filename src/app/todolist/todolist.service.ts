@@ -30,17 +30,17 @@ export class TodolistService {
   }
 
   removeFromList(todolist:string) {
-    this.todo = this.todo.filter(item => item == todolist);
+    this.todo = this.todo.filter(item => item != todolist);
     localStorage.setItem('Todo', this.todo.toString());
   }
 
   removeFromDoing(doinglist: string) {
-    this.doing = this.doing.filter(item => item == doinglist);
+    this.doing = this.doing.filter(item => item != doinglist);
     localStorage.setItem('Doing', this.doing.toString());
   }
 
   removeFromDone(donelist: string) {
-    this.done = this.done.filter(item => item == donelist);
+    this.done = this.done.filter(item => item != donelist);
     localStorage.setItem('Done', this.done.toString());
   }
 
