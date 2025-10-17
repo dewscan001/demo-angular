@@ -12,7 +12,7 @@
       <h2>To do</h2>
       <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList, doinglist, todoList]"
         class="example-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box todo" *ngFor="let item of todo" cdkDrag><span>{{item}}</span><button class="delete-btn" (click)="removeFromList(item)">X</button></div>
+        <div class="example-box todo" *ngFor="let item of todo; let i = index" cdkDrag><span>{{item}}</span><button class="delete-btn" (click)="removeFromList(index)">X</button></div>
       </div>
     </div>
 
@@ -20,7 +20,7 @@
       <h2>Doing</h2>
       <div cdkDropList #doinglist="cdkDropList" [cdkDropListData]="doing" [cdkDropListConnectedTo]="[doneList, doinglist, todoList]"
         class="example-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box doing" *ngFor="let item of doing" cdkDrag><span>{{item}}</span><button class="delete-btn" (click)="removeFromDoing(item)">X</button></div>
+        <div class="example-box doing" *ngFor="let item of doing; let i = index" cdkDrag><span>{{item}}</span><button class="delete-btn" (click)="removeFromDoing(index)">X</button></div>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
       <h2>Done</h2>
       <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[doneList, doinglist, todoList]"
         class="example-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box done" *ngFor="let item of done" cdkDrag><span>{{item}}</span><button class="delete-btn" (click)="removeFromDone(item)">X</button></div>
+        <div class="example-box done" *ngFor="let item of done; let i = index" cdkDrag><span>{{item}}</span><button class="delete-btn" (click)="removeFromDone(index)">X</button></div>
       </div>
     </div>
 

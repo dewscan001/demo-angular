@@ -46,16 +46,16 @@ export class TodolistComponent implements OnInit {
     this.service.addToDone(name);
   }
 
-  removeFromList(name: string) {
-    this.service.removeFromList(name);
+  removeFromList(index: number) {
+    this.service.removeFromList(index);
   }
 
-  removeFromDoing(name: string) {
-    this.service.removeFromDoing(name);
+  removeFromDoing(index: number) {
+    this.service.removeFromDoing(index);
   }
 
-  removeFromDone(name: string) {
-    this.service.removeFromDone(name);
+  removeFromDone(index: number) {
+    this.service.removeFromDone(index);
   }
 
   updateDrop() {

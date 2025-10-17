@@ -29,18 +29,18 @@ export class TodolistService {
     localStorage.setItem('Done', this.done.toString());
   }
 
-  removeFromList(todolist:string) {
-    this.todo = this.todo.filter(item => item != todolist);
+  removeFromList(index:number) {
+    this.todo.splice(index, 1)
     localStorage.setItem('Todo', this.todo.toString());
   }
 
-  removeFromDoing(doinglist: string) {
-    this.doing = this.doing.filter(item => item != doinglist);
+  removeFromDoing(index: number) {
+    this.doing.splice(index, 1);
     localStorage.setItem('Doing', this.doing.toString());
   }
 
-  removeFromDone(donelist: string) {
-    this.done = this.done.filter(item => item != donelist);
+  removeFromDone(index: number) {
+    this.done.splice(index, 1);
     localStorage.setItem('Done', this.done.toString());
   }
 
