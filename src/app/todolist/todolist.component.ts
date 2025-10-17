@@ -80,8 +80,4 @@ export class TodolistComponent implements OnInit {
     this.updateDrop()
   }
 
-  delete(index){
-
-  }
-
 }
