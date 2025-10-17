@@ -54,6 +54,14 @@ button{
   cursor: move;
   background: white;
   font-size: 14px;
+  position: relative;
+}
+
+.example-box.delete::after{
+  content: "\00d7"; /* This will render the 'X' */
+  position: absolute;
+  top:0;
+  right:0;
 }
 
 .todo{

@@ -29,6 +29,21 @@ export class TodolistService {
     localStorage.setItem('Done', this.done.toString());
   }
 
+  removeFromList(todolist:string) {
+    this.todo = this.todo.filter(item => item == todolist);
+    localStorage.setItem('Todo', this.todo.toString());
+  }
+
+  removeFromDoing(doinglist: string) {
+    this.doing = this.doing.filter(item => item == doinglist);
+    localStorage.setItem('Doing', this.doing.toString());
+  }
+
+  removeFromDone(donelist: string) {
+    this.done = this.done.filter(item => item == donelist);
+    localStorage.setItem('Done', this.done.toString());
+  }
+
   updateDrop() {
     localStorage.setItem('Todo', this.todo.toString());
     localStorage.setItem('Doing', this.doing.toString());

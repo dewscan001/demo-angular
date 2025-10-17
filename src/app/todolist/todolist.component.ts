@@ -31,7 +31,6 @@ export class TodolistComponent implements OnInit {
     if (this.form_add_list.value.name) {
       this.addToList(this.form_add_list.value.name)
     }
-    console.log(this.form_add_list.value)
     this.form_add_list.reset()
   }
 
@@ -45,6 +44,18 @@ export class TodolistComponent implements OnInit {
 
   addToDone(name: string) {
     this.service.addToDone(name);
+  }
+
+  removeFromList(name: string) {
+    this.service.removeFromList(name);
+  }
+
+  removeFromDoing(name: string) {
+    this.service.removeFromDoing(name);
+  }
+
+  removeFromDone(name: string) {
+    this.service.removeFromDone(name);
   }
 
   updateDrop() {
@@ -67,6 +78,10 @@ export class TodolistComponent implements OnInit {
       );
     }
     this.updateDrop()
+  }
+
+  delete(index){
+
   }
 
 }
